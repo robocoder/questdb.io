@@ -862,14 +862,9 @@ ${mergeQuery}`}
 
 const Home = () => {
   const { siteConfig } = useDocusaurusContext()
-  const title = "QuestDB"
 
   return (
-    <PageLayout
-      canonical=""
-      description={siteConfig.customFields.description}
-      title={title}
-    >
+    <PageLayout canonical="" description={siteConfig.customFields.description}>
       <Top />
       <Customers />
       <Usp />
