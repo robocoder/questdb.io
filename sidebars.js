@@ -64,6 +64,18 @@ module.exports = {
       ],
     },
     {
+      label: "Guides",
+      type: "category",
+      items: [
+        "guides/working-with-timestamps-timezones",
+        "guides/importing-data",
+        "guides/influxdb-line-protocol",
+        "guides/geohashes",
+        "guides/out-of-order-commit-lag",
+        "guides/v6-migration",
+      ],
+    },
+    {
       label: "Deployment",
       type: "category",
       items: [
@@ -89,17 +101,6 @@ module.exports = {
         "third-party-tools/grafana",
         "third-party-tools/kafka",
         "third-party-tools/telegraf",
-      ],
-    },
-    {
-      label: "Guides",
-      type: "category",
-      items: [
-        "guides/out-of-order-commit-lag",
-        "guides/influxdb-line-protocol",
-        "guides/working-with-timestamps-timezones",
-        "guides/importing-data",
-        "guides/v6-migration",
       ],
     },
     {
@@ -133,6 +134,7 @@ module.exports = {
             "reference/function/numeric",
             "reference/function/random-value-generator",
             "reference/function/row-generator",
+            "reference/function/spatial",
             "reference/function/text",
             "reference/function/timestamp-generator",
             "reference/function/timestamp",
