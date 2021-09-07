@@ -2,24 +2,23 @@
 title: Geospatial data
 description:
   This document describes how to work with geohashes as geospatial types in
-  QuestDB, including hints how to convert back and forth from latitutde and
-  longitude, inserting via SQL, InfluxDB line protocol, CSV and more.
+  QuestDB, including hints on converting back and forth from latitude and
+  longitude, inserting via SQL, InfluxDB line protocol, CSV, and more.
 ---
 
-QuestDB adds support for working with geospatial data by means of a `geohash`
-type. This page describes how to use geohashes, with an overview of the syntax,
-including hints how to convert back and forth from latitutde and longitude,
-inserting via SQL, InfluxDB line protocol, and via CSV import.
+QuestDB adds support for working with geospatial data through a `geohash` type.
+This page describes how to use geohashes, with an overview of the syntax,
+including hints on converting back and forth from latitude and longitude,
+inserting via SQL, InfluxDB line protocol, and CSV import.
 
 ## Geohash description
 
 A geohash is a convenient way of expressing a location using a short
 alphanumeric string, with greater precision obtained with longer strings. The
-basic idea is that the Earth is divided into regions of user-defined size and
-each region is assigned a unique id, which is called its Geohash. For a given
-location on earth, we can convert latitude and longitude into a string. This
-string is the Geohash and will determine which of the predefined regions the
-point belongs to.
+basic idea is that the Earth is divided into regions of user-defined size, and
+each area is assigned a unique id called its Geohash. For a given location on
+Earth, we can convert latitude and longitude into a string. This string is the
+Geohash and will determine which of the predefined regions the point belongs to.
 
 In order to be compact, [base32](https://en.wikipedia.org/wiki/Base32#Geohash)
 is used as a representation of Geohashes, and are therefore comprised of:
