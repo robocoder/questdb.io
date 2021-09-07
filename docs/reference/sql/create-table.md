@@ -285,7 +285,7 @@ documentation for
 
 #### Cloning existing SQL structure
 
-When SQL is `select * from tab` or any arbitrary SQL result, the table data will
+When SQL is `SELECT * FROM tab` or any arbitrary SQL result, the table data will
 be copied with the corresponding structure.
 
 ```questdb-sql title="Create table as select"

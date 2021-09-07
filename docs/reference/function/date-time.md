@@ -304,7 +304,7 @@ Return value type is `timestamp`
 - Unix UTC timestamp in microseconds to `Europe/Berlin`
 
 ```questdb-sql
-select to_timezone(1623167145000000, 'Europe/Berlin')
+SELECT to_timezone(1623167145000000, 'Europe/Berlin')
 ```
 
 | to_timezone                 |
@@ -314,7 +314,7 @@ select to_timezone(1623167145000000, 'Europe/Berlin')
 - Unix UTC timestamp in microseconds to PST by UTC offset
 
 ```questdb-sql
-select to_timezone(1623167145000000, '-08:00')
+SELECT to_timezone(1623167145000000, '-08:00')
 ```
 
 | to_timezone                 |
@@ -324,7 +324,7 @@ select to_timezone(1623167145000000, '-08:00')
 - Timestamp as string to `PST`
 
 ```questdb-sql
-select to_timezone('2021-06-08T13:45:45.000000Z', 'PST')
+SELECT to_timezone('2021-06-08T13:45:45.000000Z', 'PST')
 ```
 
 | to_timezone                 |
@@ -355,7 +355,7 @@ Return value type is `timestamp`
   UTC
 
 ```questdb-sql
-select to_utc(1623167145000000, 'Europe/Berlin')
+SELECT to_utc(1623167145000000, 'Europe/Berlin')
 ```
 
 | to_utc                      |
@@ -365,7 +365,7 @@ select to_utc(1623167145000000, 'Europe/Berlin')
 - Unix timestamp in microseconds from PST to UTC by UTC offset
 
 ```questdb-sql
-select to_utc(1623167145000000, '-08:00')
+SELECT to_utc(1623167145000000, '-08:00')
 ```
 
 | to_utc                      |
@@ -375,7 +375,7 @@ select to_utc(1623167145000000, '-08:00')
 - Timestamp as string in `PST` to UTC
 
 ```questdb-sql
-select to_utc('2021-06-08T13:45:45.000000Z', 'PST')
+SELECT to_utc('2021-06-08T13:45:45.000000Z', 'PST')
 ```
 
 | to_utc                      |
@@ -444,11 +444,11 @@ Return value type is `int`
 **Examples:**
 
 ```questdb-sql title="Difference in days"
-select datediff(
+SELECT datediff(
     'd',
     to_timestamp('2020-01-23','yyyy-MM-dd'),
     to_timestamp('2020-01-27','yyyy-MM-dd'))
-from long_sequence(1);
+FROM long_sequence(1);
 ```
 
 | datediff |
@@ -456,11 +456,11 @@ from long_sequence(1);
 | 4        |
 
 ```questdb-sql title="Difference in months"
-select datediff(
+SELECT datediff(
     'M',
     to_timestamp('2020-01-23','yyyy-MM-dd'),
     to_timestamp('2020-02-24','yyyy-MM-dd'))
-from long_sequence(1);
+FROM long_sequence(1);
 ```
 
 | datediff |
@@ -493,7 +493,7 @@ FROM long_sequence(1);
 | 123    |
 
 ```questdb-sql title="Using in an aggregation"
-select millis(ts), count() from transactions;
+SELECT millis(ts), count() FROM transactions;
 ```
 
 | second | count |
@@ -529,7 +529,7 @@ FROM long_sequence(1);
 | 456    |
 
 ```questdb-sql title="Using in an aggregation"
-select micros(ts), count() from transactions;
+SELECT micros(ts), count() FROM transactions;
 ```
 
 | second | count |
@@ -565,7 +565,7 @@ FROM long_sequence(1);
 | 43     |
 
 ```questdb-sql title="Using in an aggregation"
-select second(ts), count() from transactions;
+SELECT second(ts), count() FROM transactions;
 ```
 
 | second | count |
@@ -601,7 +601,7 @@ FROM long_sequence(1);
 | 43     |
 
 ```questdb-sql title="Using in an aggregation"
-select minute(ts), count() from transactions;
+SELECT minute(ts), count() FROM transactions;
 ```
 
 | minute | count |
@@ -637,7 +637,7 @@ FROM long_sequence(1);
 | 12   |
 
 ```questdb-sql title="Using in an aggregation"
-select hour(ts), count() from transactions;
+SELECT hour(ts), count() FROM transactions;
 ```
 
 | hour | count |
@@ -673,7 +673,7 @@ FROM long_sequence(1);
 | 01  |
 
 ```questdb-sql title="Using in an aggregation"
-select day(ts), count() from transactions;
+SELECT day(ts), count() FROM transactions;
 ```
 
 | day | count |
@@ -709,7 +709,7 @@ FROM long_sequence(1);
 | 03    |
 
 ```questdb-sql title="Using in an aggregation"
-select month(ts), count() from transactions;
+SELECT month(ts), count() FROM transactions;
 ```
 
 | month | count |
@@ -744,7 +744,7 @@ FROM long_sequence(1);
 | 2020 |
 
 ```questdb-sql title="Using in an aggregation"
-select month(ts), count() from transactions;
+SELECT month(ts), count() FROM transactions;
 ```
 
 | year | count |
@@ -769,7 +769,7 @@ Return value type is `boolean`
 **Examples:**
 
 ```questdb-sql
-select year(ts), is_leap_year(ts) from myTable;
+SELECT year(ts), is_leap_year(ts) FROM myTable;
 ```
 
 | year | is_leap_year |
@@ -797,7 +797,7 @@ Return value type is `int`
 **Examples:**
 
 ```questdb-sql
-select month(ts), days_in_month(ts) from myTable;
+SELECT month(ts), days_in_month(ts) FROM myTable;
 ```
 
 | month | days_in_month |
@@ -824,7 +824,7 @@ Return value type is `int`
 **Examples:**
 
 ```questdb-sql
-select to_str(ts,'EE'),day_of_week(ts) from myTable;
+SELECT to_str(ts,'EE'),day_of_week(ts) FROM myTable;
 ```
 
 | day       | day_of_week |
@@ -853,7 +853,7 @@ Return value type is `int`
 **Examples:**
 
 ```questdb-sql
-select to_str(ts,'EE'),day_of_week_sunday_first(ts) from myTable;
+SELECT to_str(ts,'EE'),day_of_week_sunday_first(ts) FROM myTable;
 ```
 
 | day       | day_of_week_sunday_first |
